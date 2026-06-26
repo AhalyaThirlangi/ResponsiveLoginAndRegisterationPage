@@ -1,0 +1,22 @@
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    font-family:Arial,sans-serif;
+}
+
+.register-card{
+    width:450px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+@media(max-width:576px){
+    .register-card{
+        width:90%;
+    }
+}
