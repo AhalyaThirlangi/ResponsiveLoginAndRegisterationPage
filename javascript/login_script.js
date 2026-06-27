@@ -1,42 +1,29 @@
-const toggleBtn = document.getElementById("toggleBtn");
-const password = document.getElementById("password");
+function togglePassword(id, icon){
 
-toggleBtn.addEventListener("click", () => {
-    if(password.type === "password"){
-        password.type = "text";
-    } else {
-        password.type = "password";
+    const input = document.getElementById(id);
+
+    if(input.type === "password"){
+        input.type = "text";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }else{
+        input.type = "password";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
     }
-});
+}
 
-document.getElementById("loginForm")
-.addEventListener("submit", function(e){
+document.getElementById("loginForm").addEventListener("submit",function(e){
 
     e.preventDefault();
 
-    let email = document.getElementById("email").value;
-    let pass = document.getElementById("password").value;
+    const email=document.getElementById("email").value.trim();
+    const password=document.getElementById("password").value.trim();
 
-    let emailError = document.getElementById("emailError");
-    let passwordError = document.getElementById("passwordError");
-
-    emailError.textContent = "";
-    passwordError.textContent = "";
-
-    let valid = true;
-
-    if(email === ""){
-        emailError.textContent = "Email is required";
-        valid = false;
+    if(email==="" || password===""){
+        alert("Please fill all fields");
+        return;
     }
 
-    if(pass.length < 6){
-        passwordError.textContent =
-        "Password must be at least 6 characters";
-        valid = false;
-    }
-
-    if(valid){
-        alert("Login Successful!");
-    }
+    alert("Login Successful");
 });
