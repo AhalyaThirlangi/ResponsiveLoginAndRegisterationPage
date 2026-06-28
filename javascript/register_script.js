@@ -12,17 +12,17 @@ function togglePassword(id, icon){
         icon.classList.add("fa-eye-slash");
     }
 }
+
 document.getElementById("registerForm").addEventListener("submit",function(e){
 
     e.preventDefault();
 
-    const first=document.getElementById("firstName").value.trim();
-    const last=document.getElementById("lastName").value.trim();
+    const first=document.getElementById("UserName").value.trim();
     const email=document.getElementById("email").value.trim();
     const password=document.getElementById("password").value;
     const confirm=document.getElementById("confirmPassword").value;
 
-    if(first==="" || last==="" || email===""){
+    if(UserName==="" || email===""){
         alert("Please fill all fields");
         return;
     }

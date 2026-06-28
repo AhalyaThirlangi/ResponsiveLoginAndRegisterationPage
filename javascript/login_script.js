@@ -12,7 +12,6 @@ function togglePassword(id, icon){
         icon.classList.add("fa-eye-slash");
     }
 }
-
 document.getElementById("loginForm").addEventListener("submit",function(e){
 
     e.preventDefault();
